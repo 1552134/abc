@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:9.6
+    container_name: sci_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    restart: always
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports: 
+      - "54320:5432"
